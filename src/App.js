@@ -11,12 +11,15 @@ export default function App() {
   return (
     <BrowserRouter>
       <Header />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/news" component={NewsList} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/profile" component={Profile} />
-      </Switch>
+      <div className="container">
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/news" component={NewsList} />
+          <Route path="/login" component={Login} />
+          <Route path="/profile" component={Profile} />
+          <Route path="/" component={() => <h1>404 Page Not Found!</h1>} />
+        </Switch>
+      </div>
     </BrowserRouter>
   );
 }
