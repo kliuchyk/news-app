@@ -4,11 +4,10 @@ import LoginPage from '../routes/LoginPage';
 import ProfilePage from '../routes/ProfilePage';
 import NewsPage from '../routes/NewsPage';
 import AppHeader from '../components/AppHeader';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-function App({ isAuth }) {
-  console.log('isAuth:', isAuth);
+function App({ loggedIn }) {
   return (
     <BrowserRouter>
       <AppHeader />
@@ -17,7 +16,9 @@ function App({ isAuth }) {
           <Route path="/" exact component={HomePage} />
           <Route path="/news" component={NewsPage} />
           <Route path="/login" component={LoginPage} />
-          <Route path="/profile" component={ProfilePage} />
+          <Route path="/profile">
+            {loggedIn ? <ProfilePage /> : <Redirect to="/login" />}
+          </Route>
           <Route path="/" component={() => <h1>404 Page Not Found!</h1>} />
         </Switch>
       </div>
@@ -27,7 +28,7 @@ function App({ isAuth }) {
 
 const mapStateToProps = state => {
   return {
-    isAuth: state.user.isAuth
+    loggedIn: state.user.loggedIn
   };
 };
 
