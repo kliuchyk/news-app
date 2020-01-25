@@ -3,6 +3,7 @@ import Spinner from 'react-bootstrap/Spinner';
 import NewsItem from '../components/NewsItem';
 import { connect } from 'react-redux';
 import { fetchNews } from '../actions/fetchNewsActions';
+import { Container, Row, Col } from 'react-bootstrap';
 
 function NewsList({ error, loading, news, fetchNews }) {
   useEffect(() => {
@@ -24,16 +25,20 @@ function NewsList({ error, loading, news, fetchNews }) {
   return (
     <div>
       <h1>Popular News</h1>
-      {news.map(({ title, description, urlToImage, author, content }) => (
-        <NewsItem
-          key={title}
-          title={title}
-          description={description}
-          urlToImage={urlToImage}
-          author={author}
-          content={content}
-        />
-      ))}
+      <Container>
+        <Row>
+          {news.map(({ title, description, urlToImage, url }) => (
+            <Col key={title}>
+              <NewsItem
+                title={title}
+                description={description}
+                urlToImage={urlToImage}
+                url={url}
+              />
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </div>
   );
 }
