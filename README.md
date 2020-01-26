@@ -4,6 +4,10 @@ App was build with React.js, Redux and Bootstrap
 
 Allows users to login and view some popular news from newsapi.org API
 
+User these credentials to login:
+username: admin
+password: 12345
+
 # API KEY
 
 You will need to get API KEY for local development:
