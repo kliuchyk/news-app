@@ -1,6 +1,6 @@
 import { fetchNewsRequest, fetchNewsSuccess, fetchNewsError } from './index';
 
-const apiKey = process.env.REACT_APP_NEWS_API;
+const apiKey = process.env.REACT_APP_NEWS_API_KEY;
 const requestUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
 
 export function fetchNews() {
