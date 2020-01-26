@@ -1,3 +1,7 @@
+### DEMO
+
+https://news-app-test.netlify.com
+
 ### Description
 
 App was build with React.js, Redux and Bootstrap
