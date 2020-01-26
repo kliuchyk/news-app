@@ -20,22 +20,22 @@ export default function AppHeader() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div
-          className="collapse navbar-collapse d-flex justify-content-center"
+          className="collapse navbar-collapse d-flex ml-3"
           id="navbarNavAltMarkup"
         >
           <div className="navbar-nav">
             <NavLink
-              className="nav-item nav-link"
+              className="nav-item nav-link mr-2"
               exact
               activeClassName="active"
               to="/"
             >
               Home <span className="sr-only">(current)</span>
             </NavLink>
-            <NavLink className="nav-item nav-link" to="/news">
+            <NavLink className="nav-item nav-link mr-2" to="/news">
               News
             </NavLink>
-            <NavLink className="nav-item nav-link" to="/profile">
+            <NavLink className="nav-item nav-link mr-2" to="/profile">
               Profile
             </NavLink>
           </div>
